@@ -17,13 +17,13 @@ This analysis is the capstone project of the Udacity's Data Science Nanodegree P
 The full dataset stored on Amazon S3 is 12GB. So I explored the data pattern of a smaller subset (128MB) first and then deployed full analysis including data cleaning and modeling to Spark clusters on the cloud using AWS Elastic MapReduce (EMR).
 
 ## File Description <a name="files"></a>
-Sparkify_Churn_Prediction.ipynb: This notebook includes the analysis on the smaller subset (128MB) before deployment.
+**Sparkify_Churn_Prediction.ipynb**: This notebook includes the analysis on the smaller subset (128MB) before deployment.
 
-Sparkify_Churn_Prediction_Deploy.ipynb: This notebook includes the deployment of Spark clusters using AWS EMR for full data analysis (12GB).
+**Sparkify_Churn_Prediction_Deploy.ipynb**: This notebook includes the deployment of Spark clusters using AWS EMR for full data analysis (12GB).
 
-run_jupyter.sh: This file creates a Docker image which will have an isolated environment to run the Spark application.
+**run_jupyter.sh**: This file creates a Docker image which will have an isolated environment to run the Spark application.
 
-images folder: All charts or screenshots in the analysis.
+**images folder**: All charts or screenshots in the analysis.
 
 ## Analysis Steps <a name="steps"></a>
 Step 1. Load and Clean Dataset
@@ -77,23 +77,23 @@ Step 4. Modeling and Evaluation
         - Accuracy
         
      c. Implement three methods to deal with the imbalanced class issue
-        * Over-sampling
-        * Under-sampling
-        * Balancing class weights
+        - Over-sampling
+        - Under-sampling
+        - Balancing class weights
         
      d. Conduct 3-fold cross-validation and parameter tuning to improve model performance
 
 
 ## Results <a name="results"></a>
-Linear Support Vector Machine has the best performance for churn prediction on the smaller subset (128MB) with a F1 Score of 0.933 and an accuracy of 96.7%, while the tuned Gradient-boosted Tree (GBT) model has the best performance on the full dataset (12GB) with a higher F1 Score of 0.934 and an accuracy of 97.0%. 
+**The Linear Support Vector Machine model** has the best performance for churn prediction on the smaller subset (128MB) with a F1 Score of 0.933 and an accuracy of 96.7%, while **the tuned Gradient-boosted Tree (GBT) model** has the best performance on the full dataset (12GB) with a high **F1 Score of 0.934** and an **accuracy of 97.0%**. 
 
 The GBT model also has high recall and precision rates. 91.2% (recall) of true churners are found by the model, and 95.7% (precision) of users the model that predicts are churners are true churners.
 
-Unique Page Actions (upage_ct) and length of enrollment (enroll_days) are the top two features with high importance. 
+**Unique Page Actions** (upage_ct) and **length of enrollment** (enroll_days) are the top two features with high importance. 
 
 The analysis and results are best presented at the medium post [here](https://kellyhe214.medium.com/customer-churn-prediction-with-pyspark-on-aws-7b889a46e60c).
 
 ## Data Source, Acknowledgements<a name="source"></a>
-The simulated small subset (128MB) and the full dataset (12GB) used in this project are both provided by Udacity. Thank you for providing the user activity data that are so close to the real-world data collected by streaming music platforms.
+The simulated small subset (128MB) and the full dataset (12GB) used in this project are both provided by Udacity. Thank you for providing the user activity data that are so close to the real-world data from streaming music service platforms.
 
 Full dataset stored on Amazon S3: "s3n://udacity-dsnd/sparkify/sparkify_event_data.json"
